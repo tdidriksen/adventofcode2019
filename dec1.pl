@@ -17,6 +17,5 @@ part2(In, R) :-
     maplist(rec_fuel(0), In, T),
     sum_list(T, R).
 
-    
-
-
+% part 1 solution: run('path-to-input', part1, R).
+% part 2 solution: run('path-to-input', part2, R).
