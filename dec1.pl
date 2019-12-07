@@ -6,9 +6,8 @@ rec_fuel(A, I, O) :- O is A, I =< 0.
 rec_fuel(A, I, O) :- fuel(I, T), B = A + T, rec_fuel(B, T, O), I > 0.
 
 run(In, P, T) :- 
-    file_to_string(In, R),
-    maplist(atom_number, R, S),
-    call(P, S, T).
+    file_to_numberlist(In, "\n", R),
+    call(P, R, T).
 
 part1(In, R) :-
     maplist(fuel, In, S),
